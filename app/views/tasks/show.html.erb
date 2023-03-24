@@ -1,0 +1,12 @@
+<div class="mx-5 mt-5">
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<p>This task has been completed | <%= @task.completed %></p>
+
+<p> <%= link_to "Update task", edit_task_path  %> </p>
+<%= link_to "Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+<p> <%= link_to "Go back to index", home_task_path  %> </p>
+</div>
